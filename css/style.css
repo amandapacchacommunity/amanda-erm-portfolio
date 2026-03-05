@@ -139,6 +139,13 @@ color: white;
   width: 100%;
   border-collapse: collapse;
   min-width: 760px;
+  /* Make the table easier to use on phones */
+#riskTable {
+  min-width: 900px;  /* forces horizontal scroll */
+}
+
+#riskTable th, #riskTable td {
+  white-space: nowrap;
 }
 
 th, td {
