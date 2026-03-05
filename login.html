@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Access</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <section>
+      <h1>Portfolio Access</h1>
+      <p>Enter the access code.</p>
+
+      <label for="code"><strong>Access code</strong></label><br />
+      <input id="code" type="password" autocomplete="off" style="padding:10px; width:100%; max-width:360px; margin:10px 0;" />
+      <br />
+      <button id="btn">Enter</button>
+
+      <p id="msg" role="status" aria-live="polite" style="margin-top:12px;"></p>
+    </section>
+  </div>
+
+  <script>
+    // Change this to your preferred code:
+    const ACCESS_CODE = "museum2026";  // <-- change me
+
+    function go() {
+      const v = document.getElementById("code").value;
+      const msg = document.getElementById("msg");
+
+      if (v === ACCESS_CODE) {
+        sessionStorage.setItem("ap_access", "granted");
+        window.location.href = "index.html";
+      } else {
+        msg.textContent = "Nope — try again.";
+      }
+    }
+
+    document.getElementById("btn").addEventListener("click", go);
+    document.getElementById("code").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") go();
+    });
+  </script>
+</body>
+</html>
