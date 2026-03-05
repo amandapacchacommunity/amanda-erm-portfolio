@@ -47,7 +47,25 @@ Example of structured risk data rendered dynamically.
 </p>
 
 <!-- THIS is where the JavaScript inserts your risk cards -->
+<h3>Searchable Risk Register</h3>
 
+<label for="riskSearch"><strong>Search:</strong></label>
+<input id="riskSearch" type="search" placeholder="Search risk, owner, mitigation…" />
+
+<div class="table-wrap" role="region" aria-label="Risk register table">
+  <table id="riskTable">
+    <thead>
+      <tr>
+        <th><button class="thbtn" data-sort="risk">Risk</button></th>
+        <th><button class="thbtn" data-sort="impact">Impact</button></th>
+        <th><button class="thbtn" data-sort="probability">Probability</button></th>
+        <th><button class="thbtn" data-sort="severity">Severity</button></th>
+        <th><button class="thbtn" data-sort="owner">Owner</button></th>
+      </tr>
+    </thead>
+    <tbody id="riskTbody"></tbody>
+  </table>
+</div>
 <div id="risk-data"></div>
 
 </section>
