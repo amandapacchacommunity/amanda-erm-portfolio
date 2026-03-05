@@ -1,1 +1,26 @@
 
+[
+{
+"risk": "Cybersecurity breach",
+"impact": 5,
+"probability": 4,
+"owner": "IT Department",
+"mitigation": "Security audits and staff training"
+},
+
+{
+"risk": "Financial instability",
+"impact": 5,
+"probability": 3,
+"owner": "Finance",
+"mitigation": "Reserve funds and diversified revenue"
+},
+
+{
+"risk": "Regulatory compliance failure",
+"impact": 5,
+"probability": 2,
+"owner": "Compliance Office",
+"mitigation": "Policy updates and regular audits"
+}
+]
