@@ -15,6 +15,10 @@ function escapeHtml(str) {
     .replaceAll("'", "&#039;");
 }
 
+function normStr(v) {
+  return String(v ?? "");
+}
+
 function renderCards(risks) {
   const container = document.getElementById("risk-data");
   if (!container) return;
@@ -28,8 +32,8 @@ function renderCards(risks) {
       <h3>
         <a href="case-studies/erm-risk-register.html">${escapeHtml(risk.risk)}</a>
       </h3>
-      <p><strong>Impact:</strong> ${risk.impact}</p>
-      <p><strong>Probability:</strong> ${risk.probability}</p>
+      <p><strong>Impact:</strong> ${escapeHtml(risk.impact)}</p>
+      <p><strong>Probability:</strong> ${escapeHtml(risk.probability)}</p>
       <p><strong>Owner:</strong> ${escapeHtml(risk.owner)}</p>
       <p><strong>Mitigation:</strong> ${escapeHtml(risk.mitigation)}</p>
     `;
@@ -52,8 +56,8 @@ function renderHeatmap(risks) {
     else if (sev >= 8) cell.classList.add("medium");
     else cell.classList.add("low");
 
-    cell.innerText = sev;
-    cell.title = `${risk.risk} (I:${risk.impact} P:${risk.probability})`;
+    cell.innerText = String(sev);
+    cell.title = `${normStr(risk.risk)} (I:${risk.impact} P:${risk.probability})`;
 
     heatmap.appendChild(cell);
   });
@@ -66,9 +70,9 @@ function renderTable(risks) {
   tbody.innerHTML = risks.map(r => `
     <tr>
       <td>${escapeHtml(r.risk)}</td>
-      <td>${r.impact}</td>
-      <td>${r.probability}</td>
-      <td>${severity(r)}</td>
+      <td>${escapeHtml(r.impact)}</td>
+      <td>${escapeHtml(r.probability)}</td>
+      <td>${escapeHtml(severity(r))}</td>
       <td>${escapeHtml(r.owner)}</td>
     </tr>
   `).join("");
@@ -76,18 +80,18 @@ function renderTable(risks) {
 
 function sortRisks(risks) {
   return [...risks].sort((a, b) => {
-    const av = sortKey === "severity" ? severity(a) : a[sortKey];
-    const bv = sortKey === "severity" ? severity(b) : b[sortKey];
+    const av = sortKey === "severity" ? severity(a) : a?.[sortKey];
+    const bv = sortKey === "severity" ? severity(b) : b?.[sortKey];
 
-    // numeric keys
     if (["impact", "probability", "severity"].includes(sortKey)) {
-      return sortDir === "asc" ? (av - bv) : (bv - av);
+      const an = Number(av) || 0;
+      const bn = Number(bv) || 0;
+      return sortDir === "asc" ? (an - bn) : (bn - an);
     }
 
-    // string keys
-    return sortDir === "asc"
-      ? String(av).localeCompare(String(bv))
-      : String(bv).localeCompare(String(av));
+    const as = normStr(av);
+    const bs = normStr(bv);
+    return sortDir === "asc" ? as.localeCompare(bs) : bs.localeCompare(as);
   });
 }
 
@@ -95,7 +99,7 @@ function applySearch() {
   const q = (document.getElementById("riskSearch")?.value ?? "").toLowerCase().trim();
 
   const filtered = ALL_RISKS.filter(r => {
-    const blob = `${r.risk} ${r.owner} ${r.mitigation}`.toLowerCase();
+    const blob = `${r.risk ?? ""} ${r.owner ?? ""} ${r.mitigation ?? ""}`.toLowerCase();
     return q === "" ? true : blob.includes(q);
   });
 
@@ -124,9 +128,12 @@ function wireSortButtons() {
 }
 
 fetch("data/risk_register.json")
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  })
   .then(data => {
-    ALL_RISKS = data.map(r => ({
+    ALL_RISKS = (Array.isArray(data) ? data : []).map(r => ({
       ...r,
       impact: Number(r.impact),
       probability: Number(r.probability)
@@ -134,25 +141,6 @@ fetch("data/risk_register.json")
 
     document.getElementById("riskSearch")?.addEventListener("input", applySearch);
     wireSortButtons();
-   /* ERM 5x5 Matrix */
-#riskMatrix {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  max-width: 420px;
-  margin: 12px 0 28px;
-}
-
-.matrix-cell {
-  height: 70px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: white;
-  font-size: 18px;
-}
     applySearch();
   })
   .catch(err => console.error("Error loading risks:", err));
