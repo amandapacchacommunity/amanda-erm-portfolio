@@ -141,6 +141,45 @@ fetch("data/risk_register.json")
 
     document.getElementById("riskSearch")?.addEventListener("input", applySearch);
     wireSortButtons();
+   function renderMatrix(risks) {
+  const matrix = document.getElementById("riskMatrix");
+  if (!matrix) return;
+
+  matrix.innerHTML = "";
+
+  // Impact: 5 → 1 (top to bottom)
+  for (let impact = 5; impact >= 1; impact--) {
+
+    // Probability: 1 → 5 (left to right)
+    for (let probability = 1; probability <= 5; probability++) {
+
+      const cell = document.createElement("div");
+      cell.className = "matrix-cell";
+
+      const matches = risks.filter(r =>
+        Number(r.impact) === impact && Number(r.probability) === probability
+      );
+
+      const sev = impact * probability;
+
+      // reuse your existing color classes
+      if (sev >= 16) cell.classList.add("high");
+      else if (sev >= 8) cell.classList.add("medium");
+      else cell.classList.add("low");
+
+      // Show count of risks in this cell
+      if (matches.length > 0) {
+        cell.textContent = matches.length;
+        cell.title = matches.map(r => r.risk).join(", ");
+      } else {
+        cell.textContent = "";
+        cell.title = `Impact ${impact}, Probability ${probability}`;
+      }
+
+      matrix.appendChild(cell);
+    }
+  }
+}
     applySearch();
   })
   .catch(err => console.error("Error loading risks:", err));
