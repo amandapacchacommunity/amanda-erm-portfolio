@@ -1,148 +1,125 @@
-/* Reset basic browser styles */
-* {
+/* Basic layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  color: #111;
 }
 
-/* Base typography */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f6f8;
-  color: #1a1a1a;
-  padding: 20px;
-}
-
-/* Container for content */
 .container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Header */
-header {
-  background: #1f3a5f;
-  color: white;
+  max-width: 980px;
+  margin: 0 auto;
   padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 6px;
 }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover,
-nav a:focus {
-  text-decoration: underline;
-}
-
-/* Section styling */
 section {
-  background: white;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 6px;
+  background: #fff;
   border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px 0;
 }
 
-/* Headings */
-h1, h2, h3 {
-  margin-bottom: 10px;
-}
-
-/* Cards for projects or case studies */
-.card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-  background: #fafafa;
-}
-
-/* Buttons */
-button {
-  background: #1f3a5f;
+.hero {
+  background: #173a5e;
   color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 18px 0;
 }
 
-button:hover,
-button:focus {
-  background: #2c4f7a;
+.hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 42px;
+  line-height: 1.1;
 }
 
-/* Accessible focus outline */
-:focus {
-  outline: 3px solid #f4a261;
+.hero p {
+  margin: 0;
+  font-size: 18px;
+  opacity: 0.95;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 40px;
+h2 {
+  margin-top: 0;
+}
+
+.tiny {
+  font-size: 13px;
   color: #666;
-  font-size: 14px;
+  margin-top: 6px;
 }
+
+/* Heat map (severity tiles) */
 #heatmap {
-
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-gap: 8px;
-margin-bottom: 30px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin: 12px 0 22px;
 }
 
 .heat-cell {
-
-padding: 20px;
-text-align: center;
-border-radius: 6px;
-font-weight: bold;
-color: white;
-
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  font-size: 20px;
 }
 
 .low { background: #2ecc71; }
-.medium { background: #f1c40f; }
+.medium { background: #f1c40f; color: #222; }
 .high { background: #e74c3c; }
+
+/* ERM 5x5 Matrix */
+#riskMatrix {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  max-width: 420px;
+  margin: 12px 0 22px;
+}
+
+.matrix-cell {
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  font-size: 18px;
+}
+
 /* Search box */
 #riskSearch {
   padding: 10px;
   border: 1px solid #cfcfcf;
-  border-radius: 6px;
+  border-radius: 8px;
   width: 100%;
   max-width: 420px;
   margin: 10px 0 15px;
 }
 
-/* Table */
+/* Table wrapper (mobile friendly horizontal scroll) */
 .table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #fff;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   width: 100%;
 }
 
-/* Keep the table wide so phones can scroll sideways */
+/* Force sideways scroll on phones so all columns appear */
 #riskTable {
+  width: 100%;
   min-width: 900px;
+  border-collapse: collapse;
 }
 
 #riskTable th, #riskTable td {
@@ -160,13 +137,14 @@ th {
   background: #f7f7f7;
 }
 
+/* Sort buttons in header */
 .thbtn {
   background: #2c4a73;
   color: white;
   border: none;
   padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 14px;
   cursor: pointer;
 }
@@ -176,41 +154,35 @@ th {
   outline: 3px solid #f4a261;
   outline-offset: 2px;
 }
-/* ERM 5x5 Matrix */
-#riskMatrix {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  max-width: 420px;
-  margin: 12px 0 28px;
+
+/* Risk cards */
+.card {
+  background: #fafafa;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
 }
 
-.matrix-cell {
-  height: 70px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: white;
-  font-size: 18px;
-}
-/* ERM 5x5 Matrix */
-#riskMatrix {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  max-width: 420px;
-  margin: 12px 0 28px;
+.card h3 {
+  margin: 0 0 10px 0;
 }
 
-.matrix-cell {
-  height: 70px;
+.card a {
+  color: #1b4dd9;
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px 0 30px;
+}
+
+.logout {
+  padding: 10px 14px;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: white;
-  font-size: 18px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
 }
