@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amanda ERM Portfolio</title>
@@ -9,7 +10,12 @@
 </head>
 
 <body>
-
+<script>
+  // If they didn’t come through login.html, bounce them
+  if (sessionStorage.getItem("ap_access") !== "granted") {
+    window.location.href = "login.html";
+  }
+</script>
 <div class="container">
 
 <header>
