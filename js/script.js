@@ -54,13 +54,9 @@ function renderHeatmap(risks) {
     const cell = document.createElement("div");
     cell.classList.add("heat-cell");
 
-    if (sev >= 16) {
-      cell.classList.add("high");
-    } else if (sev >= 8) {
-      cell.classList.add("medium");
-    } else {
-      cell.classList.add("low");
-    }
+    if (sev >= 16) cell.classList.add("high");
+    else if (sev >= 8) cell.classList.add("medium");
+    else cell.classList.add("low");
 
     cell.innerText = String(sev);
     cell.title = `${normStr(risk.risk)} (I:${risk.impact} P:${risk.probability})`;
@@ -75,27 +71,20 @@ function renderMatrix(risks) {
 
   matrix.innerHTML = "";
 
-  // 5 rows (Impact 5 to 1), 5 columns (Probability 1 to 5)
   for (let impact = 5; impact >= 1; impact--) {
     for (let probability = 1; probability <= 5; probability++) {
       const cell = document.createElement("div");
       cell.className = "matrix-cell";
 
       const matches = risks.filter(
-        (r) =>
-          Number(r.impact) === impact &&
-          Number(r.probability) === probability
+        (r) => Number(r.impact) === impact && Number(r.probability) === probability
       );
 
       const sev = impact * probability;
 
-      if (sev >= 16) {
-        cell.classList.add("high");
-      } else if (sev >= 8) {
-        cell.classList.add("medium");
-      } else {
-        cell.classList.add("low");
-      }
+      if (sev >= 16) cell.classList.add("high");
+      else if (sev >= 8) cell.classList.add("medium");
+      else cell.classList.add("low");
 
       if (matches.length > 0) {
         cell.textContent = String(matches.length);
@@ -117,14 +106,14 @@ function renderTable(risks) {
   tbody.innerHTML = risks
     .map(
       (r) => `
-    <tr>
-      <td>${escapeHtml(r.risk)}</td>
-      <td>${escapeHtml(r.impact)}</td>
-      <td>${escapeHtml(r.probability)}</td>
-      <td>${escapeHtml(severity(r))}</td>
-      <td>${escapeHtml(r.owner)}</td>
-    </tr>
-  `
+      <tr>
+        <td>${escapeHtml(r.risk)}</td>
+        <td>${escapeHtml(r.impact)}</td>
+        <td>${escapeHtml(r.probability)}</td>
+        <td>${escapeHtml(severity(r))}</td>
+        <td>${escapeHtml(r.owner)}</td>
+      </tr>
+    `
     )
     .join("");
 }
@@ -142,9 +131,7 @@ function sortRisks(risks) {
 
     const as = normStr(av);
     const bs = normStr(bv);
-    return sortDir === "asc"
-      ? as.localeCompare(bs)
-      : bs.localeCompare(as);
+    return sortDir === "asc" ? as.localeCompare(bs) : bs.localeCompare(as);
   });
 }
 
@@ -154,8 +141,7 @@ function applySearch() {
     .trim();
 
   const filtered = ALL_RISKS.filter((r) => {
-    const blob =
-      `${r.risk ?? ""} ${r.owner ?? ""} ${r.mitigation ?? ""}`.toLowerCase();
+    const blob = `${r.risk ?? ""} ${r.owner ?? ""} ${r.mitigation ?? ""}`.toLowerCase();
     return q === "" ? true : blob.includes(q);
   });
 
@@ -177,9 +163,7 @@ function wireSortButtons() {
         sortDir = sortDir === "asc" ? "desc" : "asc";
       } else {
         sortKey = key;
-        sortDir = ["impact", "probability", "severity"].includes(key)
-          ? "desc"
-          : "asc";
+        sortDir = ["impact", "probability", "severity"].includes(key) ? "desc" : "asc";
       }
 
       applySearch();
@@ -189,9 +173,7 @@ function wireSortButtons() {
 
 fetch("data/risk_register.json")
   .then((res) => {
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
-    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   })
   .then((data) => {
@@ -201,10 +183,7 @@ fetch("data/risk_register.json")
       probability: Number(r.probability),
     }));
 
-    document
-      .getElementById("riskSearch")
-      ?.addEventListener("input", applySearch);
-
+    document.getElementById("riskSearch")?.addEventListener("input", applySearch);
     wireSortButtons();
     applySearch();
   })
