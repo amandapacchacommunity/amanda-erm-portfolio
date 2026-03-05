@@ -108,6 +108,7 @@ function applySearch() {
   renderHeatmap(sorted);
   renderTable(sorted);
   renderCards(sorted);
+  renderMatrix(sorted);
 }
 
 function wireSortButtons() {
