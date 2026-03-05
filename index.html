@@ -2,104 +2,125 @@
 <html lang="en">
 
 <head>
-  <meta name="robots" content="noindex, nofollow">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amanda ERM Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
-  <button onclick="sessionStorage.removeItem('access'); window.location.href='login.html';">
-  Log out
-</button>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="noindex, nofollow">
+
+<title>Risk & Compliance Portfolio</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
+
 <script>
-  // If they didn’t come through login.html, bounce them
-  if (sessionStorage.getItem("ap_access") !== "granted") {
-    window.location.href = "login.html";
-  }
+/* Login protection */
+if (sessionStorage.getItem("access") !== "granted") {
+  window.location.href = "login.html";
+}
 </script>
+
 <div class="container">
 
 <header>
-  <h1>Amanda Paccha</h1>
-  <p>Enterprise Risk Management | Compliance | Data Analytics</p>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
+<h1>Enterprise Risk & Compliance Portfolio</h1>
+
+<p>
+Demonstration of risk management, governance frameworks,
+compliance programs, and analytics dashboards.
+</p>
+
+<nav>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+<li><a href="#risk">Risk Register</a></li>
+<li><a href="#skills">Skills</a></li>
+
+</ul>
+
+</nav>
+
 </header>
 
+
 <section id="about">
-  <h2>About</h2>
-  <p>
-  Risk and compliance professional with experience building enterprise risk
-  registers, compliance programs, and analytics dashboards across higher
-  education, nonprofit, and public sector institutions.
-  </p>
-</section>
 
-<section id="experience">
-  <h2>Professional Experience</h2>
+<h2>About</h2>
 
-  <div class="card">
-    <h3>Risk Management Associate</h3>
-    <p>Developed institutional risk register tracking 50+ risks and mitigation actions.</p>
-  </div>
+<p>
 
-  <div class="card">
-    <h3>Data Analyst</h3>
-    <p>Conducted compensation and compliance analytics for organizations with 1,700+ employees.</p>
-  </div>
+This portfolio demonstrates frameworks and analytical approaches used in
+enterprise risk management, compliance monitoring, and governance oversight.
 
-  <div class="card">
-    <h3>Advancement Manager</h3>
-    <p>Oversaw nonprofit compliance operations and managed donor analytics.</p>
-  </div>
+Examples include risk registers, mitigation tracking models,
+and regulatory compliance analysis across sectors such as higher education,
+nonprofit institutions, and corporate environments.
+
+</p>
 
 </section>
 
-<section id="projects">
-  <h2>Selected Projects</h2>
 
-  <div class="card">
-    <h3>Enterprise Risk Register</h3>
-    <p>Framework for identifying, prioritizing, and mitigating operational risks.</p>
-  </div>
+<section id="risk">
 
-  <div class="card">
-    <h3>Compliance Reporting Dashboard</h3>
-    <p>Data visualization and reporting for compliance monitoring and executive decision-making.</p>
-  </div>
+<h2>Risk Register Demo</h2>
+
+<p>
+
+This section loads structured risk data from JSON and dynamically renders
+risk entries, demonstrating how governance data can be organized
+and analyzed programmatically.
+
+</p>
+
+<div id="risk-data"></div>
 
 </section>
+
 
 <section id="skills">
-  <h2>Core Skills</h2>
 
-  <ul>
-    <li>Enterprise Risk Management (ERM)</li>
-    <li>Compliance Programs</li>
-    <li>Data Analysis & Dashboards</li>
-    <li>Policy Development</li>
-    <li>Internal Controls</li>
-  </ul>
+<h2>Core Competencies</h2>
+
+<ul>
+
+<li>Enterprise Risk Management (ERM)</li>
+<li>Regulatory Compliance Programs</li>
+<li>Data Analysis & Risk Modeling</li>
+<li>Policy Development & Governance</li>
+<li>Audit & Internal Controls</li>
+<li>Investigations & Case Management</li>
+
+</ul>
 
 </section>
 
+
 <footer>
-  <button onclick="sessionStorage.removeItem('ap_access'); window.location.href='login.html';">
-  Log out
+
+<p>
+
+Portfolio demonstration site
+
+</p>
+
+<button onclick="sessionStorage.removeItem('access'); window.location.href='login.html';">
+Log out
 </button>
-  <p>© 2026 Amanda Paccha</p>
+
 </footer>
+
 
 </div>
 
+<script src="js/script.js"></script>
+
 </body>
+
 </html>
