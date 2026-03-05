@@ -132,20 +132,22 @@ color: white;
 /* Table */
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #fff;
   margin-bottom: 25px;
   width: 100%;
-  border-collapse: collapse;
-  min-width: 760px;
-  /* Make the table easier to use on phones */
+}
+
+/* Keep the table wide so phones can scroll sideways */
 #riskTable {
-  min-width: 900px;  /* forces horizontal scroll */
+  min-width: 900px;
 }
 
 #riskTable th, #riskTable td {
   white-space: nowrap;
+}
 }
 
 th, td {
