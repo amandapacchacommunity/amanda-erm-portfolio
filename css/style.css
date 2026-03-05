@@ -119,3 +119,53 @@ color: white;
 .low { background: #2ecc71; }
 .medium { background: #f1c40f; }
 .high { background: #e74c3c; }
+/* Search box */
+#riskSearch {
+  padding: 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 420px;
+  margin: 10px 0 15px;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f7f7f7;
+}
+
+.thbtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.thbtn:hover,
+.thbtn:focus {
+  outline: 3px solid #f4a261;
+  outline-offset: 2px;
+}
