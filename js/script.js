@@ -3,11 +3,13 @@ fetch('data/risk_register.json')
   .then(data => {
 
     const container = document.getElementById("risk-data");
+    const heatmap = document.getElementById("heatmap");
 
     data.forEach(risk => {
 
-      const card = document.createElement("div");
+      /* Create risk card */
 
+      const card = document.createElement("div");
       card.className = "card";
 
       card.innerHTML = `
@@ -24,6 +26,28 @@ fetch('data/risk_register.json')
       `;
 
       container.appendChild(card);
+
+      /* Create heat map cell */
+
+      const severity = risk.impact * risk.probability;
+
+      const cell = document.createElement("div");
+
+      cell.classList.add("heat-cell");
+
+      if(severity >= 16){
+        cell.classList.add("high");
+      }
+      else if(severity >= 8){
+        cell.classList.add("medium");
+      }
+      else{
+        cell.classList.add("low");
+      }
+
+      cell.innerText = severity;
+
+      heatmap.appendChild(cell);
 
     });
 
