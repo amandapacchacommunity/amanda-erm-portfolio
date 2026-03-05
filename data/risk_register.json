@@ -1,11 +1,11 @@
-
 [
 {
 "risk": "Cybersecurity breach",
 "impact": 5,
 "probability": 4,
 "owner": "IT Department",
-"mitigation": "Security audits and staff training"
+"mitigation": "Security audits and staff training",
+"sector": "Corporate"
 },
 
 {
@@ -13,14 +13,25 @@
 "impact": 5,
 "probability": 3,
 "owner": "Finance",
-"mitigation": "Reserve funds and diversified revenue"
+"mitigation": "Reserve funds and diversified revenue",
+"sector": "Corporate"
 },
 
 {
-"risk": "Regulatory compliance failure",
+"risk": "Clery compliance reporting failure",
 "impact": 5,
+"probability": 3,
+"owner": "Campus Safety",
+"mitigation": "Training and reporting audits",
+"sector": "Higher Ed"
+},
+
+{
+"risk": "Collections handling damage",
+"impact": 4,
 "probability": 2,
-"owner": "Compliance Office",
-"mitigation": "Policy updates and regular audits"
+"owner": "Registrar",
+"mitigation": "Condition reports and handling protocols",
+"sector": "Museum"
 }
 ]
