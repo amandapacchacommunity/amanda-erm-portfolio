@@ -97,3 +97,25 @@ footer {
   color: #666;
   font-size: 14px;
 }
+#heatmap {
+
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 8px;
+margin-bottom: 30px;
+
+}
+
+.heat-cell {
+
+padding: 20px;
+text-align: center;
+border-radius: 6px;
+font-weight: bold;
+color: white;
+
+}
+
+.low { background: #2ecc71; }
+.medium { background: #f1c40f; }
+.high { background: #e74c3c; }
