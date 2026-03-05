@@ -134,6 +134,25 @@ fetch("data/risk_register.json")
 
     document.getElementById("riskSearch")?.addEventListener("input", applySearch);
     wireSortButtons();
+   /* ERM 5x5 Matrix */
+#riskMatrix {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  max-width: 420px;
+  margin: 12px 0 28px;
+}
+
+.matrix-cell {
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  font-size: 18px;
+}
     applySearch();
   })
   .catch(err => console.error("Error loading risks:", err));
