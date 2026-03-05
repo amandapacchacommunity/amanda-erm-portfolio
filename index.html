@@ -17,7 +17,6 @@
 <body>
 
 <script>
-/* Login protection */
 if (sessionStorage.getItem("access") !== "granted") {
   window.location.href = "login.html";
 }
@@ -30,87 +29,29 @@ if (sessionStorage.getItem("access") !== "granted") {
 <h1>Enterprise Risk & Compliance Portfolio</h1>
 
 <p>
-Demonstration of risk management, governance frameworks,
-compliance programs, and analytics dashboards.
+Governance, risk management, compliance programs,
+and analytics frameworks.
 </p>
-
-<nav>
-
-<ul>
-
-<li><a href="#about">About</a></li>
-<li><a href="#risk">Risk Register</a></li>
-<li><a href="#skills">Skills</a></li>
-
-</ul>
-
-</nav>
 
 </header>
 
 
-<section id="about">
-
-<h2>About</h2>
-
-<p>
-
-This portfolio demonstrates frameworks and analytical approaches used in
-enterprise risk management, compliance monitoring, and governance oversight.
-
-Examples include risk registers, mitigation tracking models,
-and regulatory compliance analysis across sectors such as higher education,
-nonprofit institutions, and corporate environments.
-
-</p>
-
-</section>
-
-
-<section id="risk">
+<section>
 
 <h2>Risk Register Demo</h2>
 
 <p>
-
-This section loads structured risk data from JSON and dynamically renders
-risk entries, demonstrating how governance data can be organized
-and analyzed programmatically.
-
+Example of structured risk data rendered dynamically.
 </p>
 
+<!-- THIS is where the JavaScript inserts your risk cards -->
+
 <div id="risk-data"></div>
-<h3>Risk Heat Map</h3>
-
-<div id="heatmap"></div>
-</section>
-
-
-<section id="skills">
-
-<h2>Core Competencies</h2>
-
-<ul>
-
-<li>Enterprise Risk Management (ERM)</li>
-<li>Regulatory Compliance Programs</li>
-<li>Data Analysis & Risk Modeling</li>
-<li>Policy Development & Governance</li>
-<li>Audit & Internal Controls</li>
-<li>Investigations & Case Management</li>
-
-</ul>
 
 </section>
 
 
 <footer>
-
-<p>
-
-Portfolio demonstration site
-
-</p>
 
 <button onclick="sessionStorage.removeItem('access'); window.location.href='login.html';">
 Log out
@@ -118,11 +59,9 @@ Log out
 
 </footer>
 
-
 </div>
 
 <script src="js/script.js"></script>
 
 </body>
-
 </html>
