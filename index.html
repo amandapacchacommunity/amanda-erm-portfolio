@@ -1,176 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda ERM Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanda ERM Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Amanda ERM Portfolio</h1>
-      <p class="site-subtitle">
-        Enterprise Risk Management | Operations | Governance | Analytics
-      </p>
+<header>
+<h1>Amanda ERM Portfolio</h1>
+<p>Enterprise Risk Management | Operations | Governance</p>
+</header>
 
-      <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<nav class="portfolio-buttons">
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h2>Risk, Operations, and Strategic Portfolio Work</h2>
-      <p>
-        This portfolio highlights work across Enterprise Risk Management,
-        operational analysis, governance, and structured business case studies.
-      </p>
-    </div>
-  </section>
+<button class="portfolio-btn active" data-target="museums">Museums</button>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="portfolio-section">
-    <div class="container">
-      <h2>Portfolio</h2>
-      <p class="section-intro">
-        Select an area below to view portfolio categories.
-      </p>
+<button class="portfolio-btn" data-target="nonprofit">Nonprofit</button>
 
-      <!-- Portfolio Buttons -->
-      <div class="portfolio-buttons">
-        <button class="portfolio-btn active" data-target="museums">Museums</button>
-        <button class="portfolio-btn" data-target="nonprofit">Nonprofit</button>
-        <button class="portfolio-btn" data-target="operations">Operations</button>
-      </div>
+<button class="portfolio-btn" data-target="operations">Operations</button>
 
-      <!-- Museums -->
-      <div class="portfolio-panel active" id="museums">
-        <h3>Museums</h3>
-        <div class="card-grid">
-          <div class="portfolio-card">
-            <h4>Museum Risk Review</h4>
-            <p>
-              Analysis of visitor experience, operational exposure, and risk
-              considerations in museum-facing environments.
-            </p>
-          </div>
+</nav>
 
-          <div class="portfolio-card">
-            <h4>Cultural Institution Controls</h4>
-            <p>
-              Example portfolio content focused on controls, governance, and
-              stakeholder-facing operations in museum settings.
-            </p>
-          </div>
-        </div>
-      </div>
+<section class="portfolio-content">
 
-      <!-- Nonprofit -->
-      <div class="portfolio-panel" id="nonprofit">
-        <h3>Nonprofit</h3>
-        <div class="card-grid">
-          <div class="portfolio-card">
-            <h4>Nonprofit Governance Review</h4>
-            <p>
-              Portfolio work covering governance structure, risk awareness,
-              and organizational resilience in nonprofit environments.
-            </p>
-          </div>
+<div class="portfolio-panel active" id="museums">
 
-          <div class="portfolio-card">
-            <h4>Program Operations Assessment</h4>
-            <p>
-              Review of delivery processes, documentation practices, and
-              operational challenges affecting nonprofit performance.
-            </p>
-          </div>
-        </div>
-      </div>
+<h2>Museums</h2>
 
-      <!-- Operations -->
-      <div class="portfolio-panel" id="operations">
-        <h3>Operations</h3>
-        <div class="card-grid">
-          <div class="portfolio-card">
-            <h4>Operational Risk Assessment</h4>
-            <p>
-              Review of business process risks, operational bottlenecks,
-              escalation points, and control gaps across day-to-day workflows.
-            </p>
-          </div>
+<div class="card">
+<h3>Museum Risk Review</h3>
+<p>Analysis of operational and visitor risks within museum environments.</p>
+</div>
 
-          <div class="portfolio-card">
-            <h4>Process Improvement Analysis</h4>
-            <p>
-              Portfolio example focused on identifying inefficiencies,
-              improving workflows, and supporting stronger operational execution.
-            </p>
-          </div>
+<div class="card">
+<h3>Cultural Governance</h3>
+<p>Portfolio examples involving governance and oversight in cultural institutions.</p>
+</div>
 
-          <div class="portfolio-card">
-            <h4>Control and Compliance Monitoring</h4>
-            <p>
-              Documentation of operational control practices, issue tracking,
-              and monitoring approaches that support accountability.
-            </p>
-          </div>
+</div>
 
-          <div class="portfolio-card">
-            <h4>Business Continuity Support</h4>
-            <p>
-              Example work related to continuity planning, incident readiness,
-              and maintaining operational stability during disruption.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- About -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        I am building a portfolio that combines Enterprise Risk Management,
-        operations thinking, governance structure, and practical business analysis.
-        My work focuses on organizing information clearly, identifying areas of
-        risk, and presenting structured solutions.
-      </p>
-    </div>
-  </section>
+<div class="portfolio-panel" id="nonprofit">
 
-  <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Contact</h2>
+<h2>Nonprofit</h2>
 
-      <div class="contact-card">
-        <p><strong>Email:</strong> <a href="mailto:alpermnyc@gmail.com">alpermnyc@gmail.com</a></p>
-        <p>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/amandapacchanewyork/" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/amandapacchanewyork
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
+<div class="card">
+<h3>Nonprofit Governance Review</h3>
+<p>Assessment of governance structure and oversight practices.</p>
+</div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Amanda ERM Portfolio</p>
-    </div>
-  </footer>
+<div class="card">
+<h3>Program Operations</h3>
+<p>Evaluation of nonprofit program operations and internal coordination.</p>
+</div>
 
-  <script src="js/script.js"></script>
+</div>
+
+
+<div class="portfolio-panel" id="operations">
+
+<h2>Operations</h2>
+
+<div class="card">
+<h3>Operational Risk Assessment</h3>
+<p>Review of internal processes to identify operational risks and control gaps.</p>
+</div>
+
+<div class="card">
+<h3>Process Improvement</h3>
+<p>Workflow analysis and improvement strategies for operational efficiency.</p>
+</div>
+
+<div class="card">
+<h3>Control Monitoring</h3>
+<p>Monitoring operational controls and identifying potential compliance issues.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>Contact: <a href="mailto:alpermnyc@gmail.com">alpermnyc@gmail.com</a></p>
+
+<p>
+LinkedIn:
+<a href="https://www.linkedin.com/in/amandapacchanewyork/" target="_blank">
+linkedin.com/in/amandapacchanewyork
+</a>
+</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
