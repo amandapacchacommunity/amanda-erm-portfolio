@@ -11,23 +11,25 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .site-header {
   background: #0f172a;
   color: white;
-  padding: 2rem 0;
   text-align: center;
+  padding: 2.5rem 0;
 }
 
 .site-header h1 {
   margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
 }
 
-.site-header p {
+.subtitle {
   margin: 0;
+  opacity: 0.95;
 }
 
 .intro {
@@ -41,18 +43,19 @@ body {
 .portfolio-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin: 1rem 0 2rem 0;
 }
 
 .portfolio-btn {
-  background: #e5e7eb;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 18px;
+  background: #e5e7eb;
+  color: #111827;
   font-weight: 600;
-  transition: background 0.2s ease;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .portfolio-btn:hover {
@@ -62,10 +65,6 @@ body {
 .portfolio-btn.active {
   background: #0f172a;
   color: white;
-}
-
-.portfolio-content {
-  margin-bottom: 2rem;
 }
 
 .portfolio-panel {
@@ -80,35 +79,61 @@ body {
   margin-bottom: 1rem;
 }
 
-.card {
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 2rem;
+}
+
+.matrix-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 14px;
   padding: 1.25rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  min-height: 150px;
 }
 
-.card h3 {
+.matrix-card h3 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
 }
 
-.card p {
+.matrix-card p {
   margin: 0;
   line-height: 1.6;
+  color: #4b5563;
 }
 
 .contact-section {
-  padding-bottom: 2rem;
+  margin: 2rem 0 3rem 0;
 }
 
-.contact-section a {
+.contact-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card p {
+  margin: 0 0 0.75rem 0;
+}
+
+.contact-card p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-card a {
   color: #0f172a;
   text-decoration: none;
   font-weight: 600;
 }
 
-.contact-section a:hover {
+.contact-card a:hover {
   text-decoration: underline;
 }
 
@@ -120,6 +145,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
   .portfolio-nav {
     flex-direction: column;
   }
@@ -127,5 +156,9 @@ body {
   .portfolio-btn {
     width: 100%;
     text-align: left;
+  }
+
+  .site-header h1 {
+    font-size: 1.8rem;
   }
 }
