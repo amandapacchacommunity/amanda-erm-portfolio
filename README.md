@@ -1,12 +1,5 @@
 # Amanda ERM Portfolio
 
-# Amanda ERM Portfolio
-
-## Dashboard Preview
-![Risk Overview](images/dashboard1.jpeg)
-![Risk Register](images/dashboard2.jpeg)
-![Risk Analytics](images/dashboard3.jpeg)
-
 ## Overview
 This project is a demonstration of an Enterprise Risk Management (ERM) portfolio system.  
 It showcases how risk registers, case studies, and risk analytics can be organized and presented in a simple web-based interface.
