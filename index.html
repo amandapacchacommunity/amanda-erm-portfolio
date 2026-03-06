@@ -7,116 +7,178 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Amanda ERM Portfolio</h1>
-      <p>
-        Enterprise Risk Management, Operations, and Portfolio Case Studies
-      </p>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <h1 class="logo">Amanda ERM Portfolio</h1>
 
-      <div class="button-group">
-        <button class="nav-btn active" onclick="showSection('operations')">Operations</button>
-        <button class="nav-btn" onclick="showSection('portfolio')">Portfolio</button>
-      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#operations">Operations</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Operations Section -->
-    <section id="operations" class="content-section active-section">
-      <h2>Operations</h2>
-      <p class="section-intro">
-        This section highlights operational risk, process improvement, and organizational support work.
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Enterprise Risk, Operations, and Portfolio Projects</h2>
+      <p>
+        A portfolio showcasing risk management, operations workflows, dashboards,
+        and sector-focused projects including museums, nonprofits, and more.
       </p>
 
-      <div class="card-grid">
-        <div class="card">
-          <h3>Museums</h3>
-          <p>
-            Risk and operational planning for museums, including visitor flow,
-            asset protection, incident management, and compliance support.
-          </p>
-          <button class="card-btn">View Details</button>
-        </div>
-
-        <div class="card">
-          <h3>Nonprofits</h3>
-          <p>
-            Governance and operational support for nonprofit organizations,
-            with focus on controls, reporting, continuity, and funding risk.
-          </p>
-          <button class="card-btn">View Details</button>
-        </div>
-
-        <div class="card">
-          <h3>Education</h3>
-          <p>
-            Risk and operational workflows for educational programs, including
-            policy review, safety controls, and stakeholder coordination.
-          </p>
-          <button class="card-btn">View Details</button>
-        </div>
-
-        <div class="card">
-          <h3>Healthcare</h3>
-          <p>
-            Operational and compliance-oriented examples involving process risk,
-            documentation standards, and service reliability.
-          </p>
-          <button class="card-btn">View Details</button>
-        </div>
+      <div class="hero-buttons">
+        <a class="btn primary-btn" href="#portfolio">View Portfolio</a>
+        <a class="btn secondary-btn" href="#operations">View Operations</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="content-section">
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        This project demonstrates structured portfolio presentation across
+        Enterprise Risk Management, operational planning, and sector-based work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section alt-bg">
+    <div class="container">
       <h2>Portfolio</h2>
       <p class="section-intro">
-        This section showcases portfolio case studies, dashboards, and ERM-related project work.
+        Explore projects by category.
       </p>
 
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="museums">Museums</button>
+        <button class="filter-btn" data-filter="nonprofits">Nonprofits</button>
+        <button class="filter-btn" data-filter="erm">ERM</button>
+        <button class="filter-btn" data-filter="operations">Operations</button>
+      </div>
+
       <div class="card-grid">
-        <div class="card">
-          <h3>ERM Dashboard</h3>
+        <!-- Museum Card -->
+        <article class="card portfolio-card" data-category="museums">
+          <img src="images/dashboard1.jpeg" alt="Museum dashboard project" class="card-image" />
+          <div class="card-content">
+            <h3>Museum Risk & Visitor Insights</h3>
+            <p>
+              A sample project exploring museum-related dashboards, visitor data,
+              and operational risk insights.
+            </p>
+            <a href="#" class="card-link">View Case Study</a>
+          </div>
+        </article>
+
+        <!-- Nonprofit Card -->
+        <article class="card portfolio-card" data-category="nonprofits">
+          <img src="images/dashboard2.jpeg" alt="Nonprofit project dashboard" class="card-image" />
+          <div class="card-content">
+            <h3>Nonprofit Governance & Risk Framework</h3>
+            <p>
+              A portfolio example focused on governance, compliance tracking,
+              and nonprofit operational structure.
+            </p>
+            <a href="#" class="card-link">View Case Study</a>
+          </div>
+        </article>
+
+        <!-- ERM Card -->
+        <article class="card portfolio-card" data-category="erm">
+          <img src="images/dashboard3.jpeg" alt="ERM dashboard" class="card-image" />
+          <div class="card-content">
+            <h3>Enterprise Risk Dashboard</h3>
+            <p>
+              A simplified ERM dashboard project demonstrating structured risk
+              registers, reporting, and portfolio presentation.
+            </p>
+            <a href="#" class="card-link">View Dashboard</a>
+          </div>
+        </article>
+
+        <!-- Operations Card -->
+        <article class="card portfolio-card" data-category="operations">
+          <img src="images/dashboard1.jpeg" alt="Operations workflow dashboard" class="card-image" />
+          <div class="card-content">
+            <h3>Operations Workflow Review</h3>
+            <p>
+              An operations-focused portfolio piece showing process improvement,
+              workflow mapping, and performance monitoring.
+            </p>
+            <a href="#" class="card-link">View Operations Work</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operations -->
+  <section id="operations" class="section">
+    <div class="container">
+      <h2>Operations</h2>
+      <p class="section-intro">
+        This section adds operational work to the existing portfolio and highlights
+        process design, workflow management, reporting, and performance support.
+      </p>
+
+      <div class="operations-grid">
+        <div class="ops-box">
+          <h3>Process Improvement</h3>
           <p>
-            A dashboard-based view of enterprise risk categories, controls,
-            heatmaps, and reporting structure.
+            Documenting and improving operational workflows to support more
+            efficient and consistent outcomes.
           </p>
-          <button class="card-btn">Open Project</button>
         </div>
 
-        <div class="card">
-          <h3>Risk Register</h3>
+        <div class="ops-box">
+          <h3>Reporting</h3>
           <p>
-            Structured risk register demonstrating risk identification,
-            impact, likelihood, mitigation, and ownership tracking.
+            Building dashboards and summaries to support decision-making,
+            accountability, and visibility across teams.
           </p>
-          <button class="card-btn">Open Project</button>
         </div>
 
-        <div class="card">
-          <h3>Case Studies</h3>
+        <div class="ops-box">
+          <h3>Controls & Monitoring</h3>
           <p>
-            Examples of ERM and operational analysis across multiple sectors,
-            including museums, nonprofits, and business operations.
+            Supporting operational discipline through review processes,
+            controls, and routine monitoring activities.
           </p>
-          <button class="card-btn">Open Project</button>
         </div>
 
-        <div class="card">
-          <h3>Analytics</h3>
+        <div class="ops-box">
+          <h3>Cross-Sector Support</h3>
           <p>
-            Portfolio analytics section showing how data can support risk
-            insights, trend review, and decision-making.
+            Applying operations thinking across museums, nonprofits,
+            and enterprise environments.
           </p>
-          <button class="card-btn">Open Project</button>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <p>© 2026 Amanda ERM Portfolio</p>
+  <!-- Contact -->
+  <section id="contact" class="section alt-bg">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: your-email@example.com</p>
+      <p>GitHub: github.com/yourusername</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Amanda ERM Portfolio. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="js/script.js"></script>
