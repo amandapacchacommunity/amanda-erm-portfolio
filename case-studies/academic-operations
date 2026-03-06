@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Process Documentation</title>
+<title>Academic Operations</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -14,10 +14,10 @@
 <main class="container">
 
 <section class="intro">
-<h1>Process Documentation</h1>
+<h1>Academic Operations</h1>
 <p>
-Review of workflows, policy support materials, and documentation needs
-that strengthen nonprofit operational consistency.
+Review of administrative workflows and institutional operating practices
+within higher education settings.
 </p>
 </section>
 
@@ -25,34 +25,34 @@ that strengthen nonprofit operational consistency.
 
 <h2>Objective</h2>
 <p>
-Improve operational clarity, reduce reliance on informal knowledge,
-and support consistent execution through better documentation.
+Assess academic administrative workflows for clarity, consistency,
+and operational effectiveness.
 </p>
 
 <h2>Key Findings</h2>
 <ul>
-<li>Core procedures were not centrally maintained</li>
-<li>Documentation was outdated in some areas</li>
-<li>Ownership of process updates was unclear</li>
+<li>Department workflows varied significantly</li>
+<li>Manual processes created delays</li>
+<li>Approval steps were not consistently documented</li>
 </ul>
 
 <h2>Recommendations</h2>
 <ul>
-<li>Build a central process library</li>
-<li>Assign document owners for maintenance</li>
-<li>Review procedures on a regular schedule</li>
+<li>Map workflows across administrative units</li>
+<li>Standardize recurring approval steps</li>
+<li>Reduce manual handoffs where possible</li>
 </ul>
 
 <h2>Skills Demonstrated</h2>
 <p>
-Process design, workflow documentation,
-operational support planning, and policy alignment.
+Administrative workflow analysis, process review,
+institutional operations assessment, and documentation.
 </p>
 
 </section>
 
 <p class="back-link">
-<a href="../sections/nonprofit.html">← Back to Nonprofit</a>
+<a href="../sections/higher-education.html">← Back to Higher Education</a>
 </p>
 
 </main>
