@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const portfolioCards = document.querySelectorAll(".portfolio-card");
+document.addEventListener("DOMContentLoaded", function(){
 
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const filterValue = this.getAttribute("data-filter");
+const buttons = document.querySelectorAll(".portfolio-btn");
+const panels = document.querySelectorAll(".portfolio-panel");
 
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-      this.classList.add("active");
+buttons.forEach(button => {
 
-      portfolioCards.forEach((card) => {
-        const category = card.getAttribute("data-category");
+button.addEventListener("click", function(){
 
-        if (filterValue === "all" || category === filterValue) {
-          card.classList.remove("hidden");
-        } else {
-          card.classList.add("hidden");
-        }
-      });
-    });
-  });
+buttons.forEach(btn => btn.classList.remove("active"));
+panels.forEach(panel => panel.classList.remove("active"));
+
+this.classList.add("active");
+
+const target = this.getAttribute("data-target");
+
+document.getElementById(target).classList.add("active");
+
+});
+
+});
+
 });
