@@ -3,178 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda ERM Portfolio</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Amanda Paccha Community | Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <script src="js/auth.js"></script>
+
   <header class="site-header">
     <div class="container">
-      <h1>Amanda ERM Portfolio</h1>
-      <p class="subtitle">
-        Enterprise Risk Management | Operations | Governance | Analytics
+      <h1>Amanda Paccha Community</h1>
+      <p>
+        Portfolio of operational risk, governance, ERM, compliance, and RCSA-focused work
+        across museums, nonprofits, higher education, finance, and operations.
       </p>
     </div>
   </header>
 
   <main class="container">
     <section class="intro">
-      <h2>Portfolio Areas</h2>
+      <h2>Portfolio Overview</h2>
       <p>
-        Select a sector below to view portfolio examples in a structured matrix layout.
+        This portfolio presents structured risk, governance, and process-review case studies
+        designed to show how institutions can assess operational exposure, strengthen internal
+        controls, improve documentation, and support continuity planning.
+      </p>
+      <p>
+        Each section contains case-study tiles and relevant embedded templates such as risk
+        matrices, governance review frameworks, ERM snapshots, compliance checklists, and
+        RCSA-style control assessment examples.
       </p>
     </section>
 
-    <section class="portfolio-nav">
-      <button class="portfolio-btn active" data-target="museums">Museums</button>
-      <button class="portfolio-btn" data-target="nonprofit">Nonprofit</button>
-      <button class="portfolio-btn" data-target="higher-education">Higher Education</button>
-      <button class="portfolio-btn" data-target="finance">Finance</button>
-      <button class="portfolio-btn" data-target="operations">Operations</button>
-    </section>
-    
-   <section class="portfolio-nav">
-      <button class="portfolio-btn active" data-target="museums">Museums</button>
-      <button class="portfolio-btn" data-target="nonprofit">Nonprofit</button>
-      <button class="portfolio-btn" data-target="higher-education">Higher Education</button>
-      <button class="portfolio-btn" data-target="finance">Finance</button>
-      <button class="portfolio-btn" data-target="operations">Operations</button>
-    </section>
-    
-    <section class="portfolio-content">
-      <div class="portfolio-panel active" id="museums">
-        <h2>Museums</h2>
-        <div class="matrix-grid">
-          <article class="matrix-card">
-            <h3>Museum Risk Review</h3>
-            <p>Operational and visitor-facing risk review for museum environments.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Governance Controls</h3>
-            <p>Examples of internal controls, oversight, and accountability practices.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Program Continuity</h3>
-            <p>Assessment of disruption response and service continuity planning.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Stakeholder Exposure</h3>
-            <p>Review of reputation, public engagement, and institutional exposure areas.</p>
-          </article>
-        </div>
-      </div>
+    <section class="section-grid">
+      <a href="sections/museums.html" class="section-card-link">
+        <article class="section-card">
+          <h3>Museums</h3>
+          <p>Risk, continuity, governance, and stakeholder exposure in public-facing cultural environments.</p>
+        </article>
+      </a>
 
-      <div class="portfolio-panel" id="nonprofit">
-        <h2>Nonprofit</h2>
-        <div class="matrix-grid">
-          <article class="matrix-card">
-            <h3>Governance Review</h3>
-            <p>Assessment of board oversight, reporting structures, and accountability.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Program Operations</h3>
-            <p>Evaluation of program execution, coordination, and documentation.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Risk Awareness</h3>
-            <p>Identification of control gaps and resilience concerns across operations.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Process Documentation</h3>
-            <p>Structured examples of workflows, policies, and operational support needs.</p>
-          </article>
-        </div>
-      </div>
+      <a href="sections/nonprofit.html" class="section-card-link">
+        <article class="section-card">
+          <h3>Nonprofit</h3>
+          <p>Governance, documentation, program operations, and resilience practices for mission-driven organizations.</p>
+        </article>
+      </a>
 
-      <div class="portfolio-panel" id="higher-education">
-        <h2>Higher Education</h2>
-        <div class="matrix-grid">
-          <article class="matrix-card">
-            <h3>Academic Operations</h3>
-            <p>Review of administrative workflows and institutional operating practices.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Policy Compliance</h3>
-            <p>Examples of compliance alignment, oversight, and policy support.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Department Risk Mapping</h3>
-            <p>Identification of operational dependencies and potential exposure points.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Institutional Controls</h3>
-            <p>Focus on governance structures and process consistency in education settings.</p>
-          </article>
-        </div>
-      </div>
+      <a href="sections/higher-education.html" class="section-card-link">
+        <article class="section-card">
+          <h3>Higher Education</h3>
+          <p>Academic operations, policy alignment, institutional controls, and department-level risk dependencies.</p>
+        </article>
+      </a>
 
-      <div class="portfolio-panel" id="finance">
-        <h2>Finance</h2>
-        <div class="matrix-grid">
-          <article class="matrix-card">
-            <h3>Financial Risk Overview</h3>
-            <p>Review of reporting risks, control environments, and accountability concerns.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Control Monitoring</h3>
-            <p>Examples of tracking issues, exceptions, and operational control quality.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Governance Alignment</h3>
-            <p>Assessment of oversight practices and escalation pathways.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Process Reliability</h3>
-            <p>Evaluation of workflow strength, repeatability, and control effectiveness.</p>
-          </article>
-        </div>
-      </div>
+      <a href="sections/finance.html" class="section-card-link">
+        <article class="section-card">
+          <h3>Finance</h3>
+          <p>Financial risk, governance alignment, control monitoring, and workflow reliability.</p>
+        </article>
+      </a>
 
-      <div class="portfolio-panel" id="operations">
-        <h2>Operations</h2>
-        <div class="matrix-grid">
-          <article class="matrix-card">
-            <h3>Operational Risk Assessment</h3>
-            <p>Review of internal processes to identify workflow risks and control gaps.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Process Improvement</h3>
-            <p>Workflow analysis focused on efficiency, clarity, and execution quality.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Business Continuity</h3>
-            <p>Support for resilience planning and disruption-readiness practices.</p>
-          </article>
-          <article class="matrix-card">
-            <h3>Issue Tracking</h3>
-            <p>Documentation and monitoring of operational issues and corrective actions.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <h2>Contact</h2>
-      <div class="contact-card">
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:alpermnyc@gmail.com">alpermnyc@gmail.com</a>
-        </p>
-        <p>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/amandapacchanewyork/" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/amandapacchanewyork
-          </a>
-        </p>
-      </div>
+      <a href="sections/operations.html" class="section-card-link">
+        <article class="section-card">
+          <h3>Operations</h3>
+          <p>Operational risk assessment, issue tracking, business continuity, and process improvement.</p>
+        </article>
+      </a>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Amanda ERM Portfolio</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
