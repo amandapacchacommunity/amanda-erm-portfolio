@@ -1,22 +1,23 @@
-function showSection(sectionId) {
-  const sections = document.querySelectorAll(".content-section");
-  const buttons = document.querySelectorAll(".nav-btn");
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-  sections.forEach((section) => {
-    section.classList.remove("active-section");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const filterValue = this.getAttribute("data-filter");
+
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      this.classList.add("active");
+
+      portfolioCards.forEach((card) => {
+        const category = card.getAttribute("data-category");
+
+        if (filterValue === "all" || category === filterValue) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
   });
-
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
-
-  document.getElementById(sectionId).classList.add("active-section");
-
-  const clickedButton = Array.from(buttons).find(
-    (button) => button.textContent.toLowerCase() === sectionId
-  );
-
-  if (clickedButton) {
-    clickedButton.classList.add("active");
-  }
-}
+});
