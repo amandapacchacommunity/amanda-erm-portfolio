@@ -1,172 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda ERM Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".portfolio-btn");
+  const panels = document.querySelectorAll(".portfolio-panel");
 
-  <header class="site-header">
-    <div class="container">
-      <h1>Amanda ERM Portfolio</h1>
-      <p>Enterprise Risk Management | Operations | Governance | Analytics</p>
-    </div>
-  </header>
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
 
-  <main class="container">
-    <section class="intro">
-      <h2>Portfolio Areas</h2>
-      <p>
-        This portfolio highlights work across risk management, governance,
-        operations, and sector-focused case studies.
-      </p>
-    </section>
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      panels.forEach((panel) => panel.classList.remove("active"));
 
-    <section class="portfolio-nav">
-      <button class="portfolio-btn active" data-target="museums">Museums</button>
-      <button class="portfolio-btn" data-target="nonprofit">Nonprofit</button>
-      <button class="portfolio-btn" data-target="higher-education">Higher Education</button>
-      <button class="portfolio-btn" data-target="finance">Finance</button>
-      <button class="portfolio-btn" data-target="operations">Operations</button>
-    </section>
+      this.classList.add("active");
 
-    <section class="portfolio-content">
-
-      <div class="portfolio-panel active" id="museums">
-        <h2>Museums</h2>
-
-        <div class="card">
-          <h3>Museum Risk Review</h3>
-          <p>
-            Analysis of operational, governance, and visitor-related risks
-            within museum and cultural institution environments.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Cultural Institution Controls</h3>
-          <p>
-            Portfolio examples focused on oversight, compliance awareness,
-            and organizational resilience in museum settings.
-          </p>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="nonprofit">
-        <h2>Nonprofit</h2>
-
-        <div class="card">
-          <h3>Nonprofit Governance Review</h3>
-          <p>
-            Review of nonprofit governance structures, accountability practices,
-            and organizational risk considerations.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Program Operations Assessment</h3>
-          <p>
-            Evaluation of nonprofit program delivery, workflow coordination,
-            and operational challenges affecting effectiveness.
-          </p>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="higher-education">
-        <h2>Higher Education</h2>
-
-        <div class="card">
-          <h3>Academic Operations Review</h3>
-          <p>
-            Assessment of operational processes, administrative workflows,
-            and institutional risk considerations in higher education settings.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Governance and Compliance in Education</h3>
-          <p>
-            Portfolio work focused on policy alignment, oversight structures,
-            and compliance awareness in academic institutions.
-          </p>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="finance">
-        <h2>Finance</h2>
-
-        <div class="card">
-          <h3>Financial Risk Overview</h3>
-          <p>
-            Analysis of financial control environments, reporting risks,
-            and governance practices relevant to finance-focused operations.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Control and Oversight Review</h3>
-          <p>
-            Examples of work related to accountability, monitoring,
-            and operational control frameworks in finance environments.
-          </p>
-        </div>
-      </div>
-
-      <div class="portfolio-panel" id="operations">
-        <h2>Operations</h2>
-
-        <div class="card">
-          <h3>Operational Risk Assessment</h3>
-          <p>
-            Review of internal processes to identify workflow risks,
-            escalation points, and control gaps.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Process Improvement Analysis</h3>
-          <p>
-            Evaluation of business workflows with a focus on efficiency,
-            coordination, and process improvement opportunities.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Control Monitoring</h3>
-          <p>
-            Documentation and review of operational controls,
-            issue tracking, and compliance support practices.
-          </p>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="contact-section">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:alpermnyc@gmail.com">alpermnyc@gmail.com</a>
-        </p>
-        <p>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/amandapacchanewyork/" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/amandapacchanewyork
-          </a>
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Amanda ERM Portfolio</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
+      const activePanel = document.getElementById(target);
+      if (activePanel) {
+        activePanel.classList.add("active");
+      }
+    });
+  });
+});
