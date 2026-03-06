@@ -1,91 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-
-<title>Enterprise Risk & Compliance Portfolio</title>
-
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Amanda | Risk, Compliance & Governance Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <!-- Password gate (keeps casual visitors out; not true security) -->
+  <script>
+    if (sessionStorage.getItem("access") !== "granted") {
+      window.location.href = "login.html";
+    }
+  </script>
 
-<script>
-if (sessionStorage.getItem("access") !== "granted") {
-  window.location.href = "login.html";
-}
-</script>
+  <div class="container">
 
-<div class="container">
+    <header class="hero" role="banner">
+      <h1>Risk, Compliance & Governance Portfolio</h1>
+      <p class="sub">
+        Sector-based portfolio + live dashboards. Pick the sector lens most relevant to your organization.
+      </p>
 
-<header class="hero">
-<h1>Enterprise Risk & Compliance Portfolio</h1>
-<p>Governance, risk management, compliance programs, and analytics frameworks.</p>
-</header>
+      <nav class="sector-tabs" aria-label="Sector tabs">
+        <button class="tab is-active" data-sector="museum" aria-selected="true">Museums</button>
+        <button class="tab" data-sector="nonprofit" aria-selected="false">Non-profits</button>
+        <button class="tab" data-sector="highered" aria-selected="false">Higher Ed</button>
+        <button class="tab" data-sector="finance" aria-selected="false">Financial / Corporate</button>
+      </nav>
+    </header>
 
-<section>
+    <!-- Sector summaries (only one shows at a time) -->
+    <section class="panel" aria-label="Sector summary">
+      <div class="sector-summary is-visible" data-sector-panel="museum">
+        <h2>Museums & Cultural Institutions</h2>
+        <p>
+          Governance, collections stewardship risk, safety, compliance, and operational resilience—paired with analytics that
+          turn complex programs into clear executive reporting.
+        </p>
+        <ul class="chips" aria-label="Museum focus areas">
+          <li>Collections & facilities risk</li>
+          <li>HR/comp compliance analytics</li>
+          <li>Event safety & incident trend reporting</li>
+          <li>Donor/advancement operations controls</li>
+        </ul>
+      </div>
 
-<h2>Risk Register Demo</h2>
+      <div class="sector-summary" data-sector-panel="nonprofit">
+        <h2>Non-profits & Foundations</h2>
+        <p>
+          Policy-aligned operations, ethics programs, donor stewardship controls, grants readiness, and board-friendly
+          reporting—built for transparency and audit readiness.
+        </p>
+        <ul class="chips" aria-label="Nonprofit focus areas">
+          <li>Ethics & code of conduct</li>
+          <li>Donor/data governance</li>
+          <li>Grants & reporting controls</li>
+          <li>Risk register & mitigation tracking</li>
+        </ul>
+      </div>
 
-<h3>Risk Heat Map</h3>
-<div id="heatmap"></div>
+      <div class="sector-summary" data-sector-panel="highered">
+        <h2>Higher Education</h2>
+        <p>
+          Campus compliance, Clery program leadership, investigations workflows, and ERM reporting with strong governance
+          and clear accountability.
+        </p>
+        <ul class="chips" aria-label="Higher ed focus areas">
+          <li>Clery compliance program</li>
+          <li>ERM risk register + KRIs</li>
+          <li>Training & stakeholder enablement</li>
+          <li>Audit-ready documentation</li>
+        </ul>
+      </div>
 
-<h3>ERM Risk Matrix (Impact × Probability)</h3>
-<p class="tiny">Numbers show how many risks fall into each cell.</p>
+      <div class="sector-summary" data-sector-panel="finance">
+        <h2>Financial / Corporate Risk</h2>
+        <p>
+          Risk identification, assessment, testing, reporting, and control monitoring—built to map cleanly to governance
+          frameworks and executive oversight.
+        </p>
+        <ul class="chips" aria-label="Finance focus areas">
+          <li>RCSA-style assessment</li>
+          <li>Controls testing & issue tracking</li>
+          <li>KRIs, trends, thematic reporting</li>
+          <li>Policy + compliance monitoring</li>
+        </ul>
+      </div>
+    </section>
 
-<div id="riskMatrix"></div>
+    <!-- DASHBOARDS -->
+    <section class="panel" aria-label="Dashboards">
+      <div class="panel-head">
+        <h2>Dashboards</h2>
+        <p class="tiny">Data is loaded from <code>data/risk_register.json</code> and filtered by the selected sector.</p>
+      </div>
 
-<p>Example of structured risk data rendered dynamically.</p>
+      <div class="dash-grid">
+        <div class="dash-card" aria-label="Heat map">
+          <h3>Severity Heat Tiles</h3>
+          <div id="heatmap" class="heatmap" aria-label="Severity tiles"></div>
+        </div>
 
-<h3>Searchable Risk Register</h3>
+        <div class="dash-card" aria-label="ERM matrix">
+          <h3>ERM Risk Matrix (Impact × Probability)</h3>
+          <p class="tiny">Numbers show how many risks fall into each cell.</p>
+          <div id="riskMatrix" class="matrix" aria-label="5 by 5 ERM matrix"></div>
+        </div>
+      </div>
+    </section>
 
-<label for="riskSearch"><strong>Search:</strong></label>
+    <!-- SEARCH + TABLE -->
+    <section class="panel" aria-label="Risk register">
+      <div class="panel-head">
+        <h2>Searchable Risk Register</h2>
+        <p class="tiny">Use search + sorting to quickly demonstrate how you structure and communicate governance data.</p>
+      </div>
 
-<input id="riskSearch"
-type="search"
-placeholder="Search risk, owner, mitigation...">
+      <label for="riskSearch"><strong>Search:</strong></label>
+      <input id="riskSearch" type="search" placeholder="Search risk, owner, mitigation…" />
 
-<div class="table-wrap">
+      <div class="table-wrap" role="region" aria-label="Risk register table">
+        <table id="riskTable">
+          <thead>
+            <tr>
+              <th><button class="thbtn" data-sort="risk">Risk</button></th>
+              <th><button class="thbtn" data-sort="impact">Impact</button></th>
+              <th><button class="thbtn" data-sort="probability">Probability</button></th>
+              <th><button class="thbtn" data-sort="severity">Severity</button></th>
+              <th><button class="thbtn" data-sort="owner">Owner</button></th>
+            </tr>
+          </thead>
+          <tbody id="riskTbody"></tbody>
+        </table>
+      </div>
+    </section>
 
-<table id="riskTable">
+    <!-- CASE STUDIES (bucketed; links can be expanded later) -->
+    <section class="panel" aria-label="Case studies">
+      <div class="panel-head">
+        <h2>Case Studies</h2>
+        <p class="tiny">Click any card to view a write-up (you can add more pages over time).</p>
+      </div>
 
-<thead>
-<tr>
-<th><button class="thbtn" data-sort="risk">Risk</button></th>
-<th><button class="thbtn" data-sort="impact">Impact</button></th>
-<th><button class="thbtn" data-sort="probability">Probability</button></th>
-<th><button class="thbtn" data-sort="severity">Severity</button></th>
-<th><button class="thbtn" data-sort="owner">Owner</button></th>
-</tr>
-</thead>
+      <div id="caseStudyGrid" class="case-grid" aria-label="Case study cards"></div>
+    </section>
 
-<tbody id="riskTbody"></tbody>
+    <!-- CARDS LIST (filtered) -->
+    <section class="panel" aria-label="Risk cards">
+      <div class="panel-head">
+        <h2>Risk Cards</h2>
+        <p class="tiny">Quick scan format—useful for recruiters who don’t want to read the whole table.</p>
+      </div>
+      <div id="risk-data"></div>
+    </section>
 
-</table>
+    <footer class="footer">
+      <button class="logout"
+        onclick="sessionStorage.removeItem('access'); window.location.href='login.html';">
+        Log out
+      </button>
+    </footer>
 
-</div>
+  </div>
 
-<h3>Risk Cards</h3>
-
-<div id="risk-data"></div>
-
-</section>
-
-<footer class="footer">
-
-<button class="logout"
-onclick="sessionStorage.removeItem('access'); window.location.href='login.html';">
-Log out
-</button>
-
-</footer>
-
-</div>
-
-<script src="js/script.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
