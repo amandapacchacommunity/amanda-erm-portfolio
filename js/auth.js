@@ -1,10 +1,11 @@
 const ACCESS_CODE = "risklab2026";
 
 (function protectPage() {
-  const isLoginPage = window.location.pathname.includes("login.html") || window.location.pathname.endsWith("/");
+  const path = window.location.pathname;
+  const isLoginPage = path.includes("login.html");
   const access = sessionStorage.getItem("access");
 
   if (!isLoginPage && access !== "granted") {
-    window.location.href = "/login.html";
+    window.location.href = "../login.html";
   }
 })();
