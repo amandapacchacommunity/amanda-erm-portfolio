@@ -7,16 +7,19 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <h1 class="logo">Amanda ERM Portfolio</h1>
 
-      <nav class="nav">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Amanda ERM Portfolio</h1>
+      <p class="site-subtitle">
+        Enterprise Risk Management | Operations | Governance | Analytics
+      </p>
+
+      <nav class="main-nav">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#operations">Operations</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -25,159 +28,146 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="container">
-      <h2>Enterprise Risk, Operations, and Portfolio Projects</h2>
+      <h2>Risk, Operations, and Strategic Portfolio Work</h2>
       <p>
-        A portfolio showcasing risk management, operations workflows, dashboards,
-        and sector-focused projects including museums, nonprofits, and more.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn primary-btn" href="#portfolio">View Portfolio</a>
-        <a class="btn secondary-btn" href="#operations">View Operations</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        This project demonstrates structured portfolio presentation across
-        Enterprise Risk Management, operational planning, and sector-based work.
+        This portfolio highlights work across Enterprise Risk Management,
+        operational analysis, governance, and structured business case studies.
       </p>
     </div>
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio" class="section alt-bg">
+  <section id="portfolio" class="portfolio-section">
     <div class="container">
       <h2>Portfolio</h2>
       <p class="section-intro">
-        Explore projects by category.
+        Select an area below to view portfolio categories.
       </p>
 
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="museums">Museums</button>
-        <button class="filter-btn" data-filter="nonprofits">Nonprofits</button>
-        <button class="filter-btn" data-filter="erm">ERM</button>
-        <button class="filter-btn" data-filter="operations">Operations</button>
+      <!-- Portfolio Buttons -->
+      <div class="portfolio-buttons">
+        <button class="portfolio-btn active" data-target="museums">Museums</button>
+        <button class="portfolio-btn" data-target="nonprofit">Nonprofit</button>
+        <button class="portfolio-btn" data-target="operations">Operations</button>
       </div>
 
-      <div class="card-grid">
-        <!-- Museum Card -->
-        <article class="card portfolio-card" data-category="museums">
-          <img src="images/dashboard1.jpeg" alt="Museum dashboard project" class="card-image" />
-          <div class="card-content">
-            <h3>Museum Risk & Visitor Insights</h3>
+      <!-- Museums -->
+      <div class="portfolio-panel active" id="museums">
+        <h3>Museums</h3>
+        <div class="card-grid">
+          <div class="portfolio-card">
+            <h4>Museum Risk Review</h4>
             <p>
-              A sample project exploring museum-related dashboards, visitor data,
-              and operational risk insights.
+              Analysis of visitor experience, operational exposure, and risk
+              considerations in museum-facing environments.
             </p>
-            <a href="#" class="card-link">View Case Study</a>
           </div>
-        </article>
 
-        <!-- Nonprofit Card -->
-        <article class="card portfolio-card" data-category="nonprofits">
-          <img src="images/dashboard2.jpeg" alt="Nonprofit project dashboard" class="card-image" />
-          <div class="card-content">
-            <h3>Nonprofit Governance & Risk Framework</h3>
+          <div class="portfolio-card">
+            <h4>Cultural Institution Controls</h4>
             <p>
-              A portfolio example focused on governance, compliance tracking,
-              and nonprofit operational structure.
+              Example portfolio content focused on controls, governance, and
+              stakeholder-facing operations in museum settings.
             </p>
-            <a href="#" class="card-link">View Case Study</a>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <!-- ERM Card -->
-        <article class="card portfolio-card" data-category="erm">
-          <img src="images/dashboard3.jpeg" alt="ERM dashboard" class="card-image" />
-          <div class="card-content">
-            <h3>Enterprise Risk Dashboard</h3>
+      <!-- Nonprofit -->
+      <div class="portfolio-panel" id="nonprofit">
+        <h3>Nonprofit</h3>
+        <div class="card-grid">
+          <div class="portfolio-card">
+            <h4>Nonprofit Governance Review</h4>
             <p>
-              A simplified ERM dashboard project demonstrating structured risk
-              registers, reporting, and portfolio presentation.
+              Portfolio work covering governance structure, risk awareness,
+              and organizational resilience in nonprofit environments.
             </p>
-            <a href="#" class="card-link">View Dashboard</a>
           </div>
-        </article>
 
-        <!-- Operations Card -->
-        <article class="card portfolio-card" data-category="operations">
-          <img src="images/dashboard1.jpeg" alt="Operations workflow dashboard" class="card-image" />
-          <div class="card-content">
-            <h3>Operations Workflow Review</h3>
+          <div class="portfolio-card">
+            <h4>Program Operations Assessment</h4>
             <p>
-              An operations-focused portfolio piece showing process improvement,
-              workflow mapping, and performance monitoring.
+              Review of delivery processes, documentation practices, and
+              operational challenges affecting nonprofit performance.
             </p>
-            <a href="#" class="card-link">View Operations Work</a>
           </div>
-        </article>
+        </div>
+      </div>
+
+      <!-- Operations -->
+      <div class="portfolio-panel" id="operations">
+        <h3>Operations</h3>
+        <div class="card-grid">
+          <div class="portfolio-card">
+            <h4>Operational Risk Assessment</h4>
+            <p>
+              Review of business process risks, operational bottlenecks,
+              escalation points, and control gaps across day-to-day workflows.
+            </p>
+          </div>
+
+          <div class="portfolio-card">
+            <h4>Process Improvement Analysis</h4>
+            <p>
+              Portfolio example focused on identifying inefficiencies,
+              improving workflows, and supporting stronger operational execution.
+            </p>
+          </div>
+
+          <div class="portfolio-card">
+            <h4>Control and Compliance Monitoring</h4>
+            <p>
+              Documentation of operational control practices, issue tracking,
+              and monitoring approaches that support accountability.
+            </p>
+          </div>
+
+          <div class="portfolio-card">
+            <h4>Business Continuity Support</h4>
+            <p>
+              Example work related to continuity planning, incident readiness,
+              and maintaining operational stability during disruption.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Operations -->
-  <section id="operations" class="section">
+  <!-- About -->
+  <section id="about" class="about-section">
     <div class="container">
-      <h2>Operations</h2>
-      <p class="section-intro">
-        This section adds operational work to the existing portfolio and highlights
-        process design, workflow management, reporting, and performance support.
+      <h2>About</h2>
+      <p>
+        I am building a portfolio that combines Enterprise Risk Management,
+        operations thinking, governance structure, and practical business analysis.
+        My work focuses on organizing information clearly, identifying areas of
+        risk, and presenting structured solutions.
       </p>
-
-      <div class="operations-grid">
-        <div class="ops-box">
-          <h3>Process Improvement</h3>
-          <p>
-            Documenting and improving operational workflows to support more
-            efficient and consistent outcomes.
-          </p>
-        </div>
-
-        <div class="ops-box">
-          <h3>Reporting</h3>
-          <p>
-            Building dashboards and summaries to support decision-making,
-            accountability, and visibility across teams.
-          </p>
-        </div>
-
-        <div class="ops-box">
-          <h3>Controls & Monitoring</h3>
-          <p>
-            Supporting operational discipline through review processes,
-            controls, and routine monitoring activities.
-          </p>
-        </div>
-
-        <div class="ops-box">
-          <h3>Cross-Sector Support</h3>
-          <p>
-            Applying operations thinking across museums, nonprofits,
-            and enterprise environments.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section alt-bg">
+  <section id="contact" class="contact-section">
     <div class="container">
       <h2>Contact</h2>
-      <p>Email: your-email@example.com</p>
-      <p>GitHub: github.com/yourusername</p>
+
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href="mailto:alpermnyc@gmail.com">alpermnyc@gmail.com</a></p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/amandapacchanewyork/" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/amandapacchanewyork
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Amanda ERM Portfolio. All rights reserved.</p>
+      <p>© 2026 Amanda ERM Portfolio</p>
     </div>
   </footer>
 
