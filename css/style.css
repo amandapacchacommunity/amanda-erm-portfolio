@@ -1,67 +1,131 @@
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f5f6fa;
+* {
+  box-sizing: border-box;
 }
 
-header{
-text-align:center;
-padding:30px;
-background:#0f172a;
-color:white;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
 }
 
-.portfolio-buttons{
-text-align:center;
-margin:30px;
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.portfolio-btn{
-padding:10px 18px;
-margin:6px;
-border:none;
-background:#e5e7eb;
-cursor:pointer;
-border-radius:6px;
-font-weight:bold;
+.site-header {
+  background: #0f172a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
 }
 
-.portfolio-btn.active{
-background:#0f172a;
-color:white;
+.site-header h1 {
+  margin: 0 0 0.5rem 0;
 }
 
-.portfolio-content{
-max-width:900px;
-margin:auto;
-padding:20px;
+.site-header p {
+  margin: 0;
 }
 
-.portfolio-panel{
-display:none;
+.intro {
+  padding: 2rem 0 1rem 0;
 }
 
-.portfolio-panel.active{
-display:block;
+.intro h2 {
+  margin-bottom: 0.5rem;
 }
 
-.card{
-background:white;
-padding:20px;
-margin-bottom:15px;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+.portfolio-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem 0 2rem 0;
 }
 
-footer{
-text-align:center;
-padding:25px;
-margin-top:40px;
-background:#0f172a;
-color:white;
+.portfolio-btn {
+  background: #e5e7eb;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
 
-footer a{
-color:#93c5fd;
-text-decoration:none;
+.portfolio-btn:hover {
+  background: #cbd5e1;
+}
+
+.portfolio-btn.active {
+  background: #0f172a;
+  color: white;
+}
+
+.portfolio-content {
+  margin-bottom: 2rem;
+}
+
+.portfolio-panel {
+  display: none;
+}
+
+.portfolio-panel.active {
+  display: block;
+}
+
+.portfolio-panel h2 {
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-section {
+  padding-bottom: 2rem;
+}
+
+.contact-section a {
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .portfolio-nav {
+    flex-direction: column;
+  }
+
+  .portfolio-btn {
+    width: 100%;
+    text-align: left;
+  }
 }
