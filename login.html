@@ -1,50 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
-<title>Access</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Portfolio Access</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+<body class="login-page">
+  <main class="container narrow">
+    <section class="contact-card login-card">
+      <h1>Portfolio Access</h1>
+      <p>Enter access code to view the portfolio.</p>
 
-<body>
+      <label for="code" class="sr-only">Access code</label>
+      <input type="password" id="code" placeholder="Access code" />
+      <button type="button" onclick="checkAccess()">Enter</button>
+      <p id="msg" class="error-text"></p>
+    </section>
+  </main>
 
-<h2>Portfolio Access</h2>
-<p>Enter access code</p>
+  <script src="js/auth.js"></script>
+  <script>
+    function checkAccess() {
+      const entered = document.getElementById("code").value;
+      const message = document.getElementById("msg");
 
-<input type="password" id="code">
-<button onclick="check()">Enter</button>
-
-<p id="msg"></p>
-
-<script>
-
-const ACCESS_CODE = "risklab2026";
-
-function check(){
-
-let entered = document.getElementById("code").value;
-
-if(entered === ACCESS_CODE){
-
-sessionStorage.setItem("access","granted");
-
-window.location.href="index.html";
-
-}else{
-
-document.getElementById("msg").innerText="Incorrect code";
-
-}
-
-}
-
-</script>
-
+      if (entered === ACCESS_CODE) {
+        sessionStorage.setItem("access", "granted");
+        window.location.href = "index.html";
+      } else {
+        message.innerText = "Incorrect code";
+      }
+    }
+  </script>
 </body>
-  <div class="container">
-  <section>
-    <!-- your login content here -->
-  </section>
-</div>
 </html>
