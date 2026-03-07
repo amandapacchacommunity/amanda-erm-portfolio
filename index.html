@@ -1,122 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Amanda Paccha Community | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amanda Paccha Community | Portfolio</title>
+    <meta
+        name="description"
+        content="Amanda Paccha Community portfolio featuring work in higher education, investigations, research, and community-centered projects."
+    />
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --panel-2: #1f2937;
+            --text: #f9fafb;
+            --muted: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border: #334155;
+            --shadow: rgba(0, 0, 0, 0.25);
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .portfolio-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .portfolio-nav .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-weight: 600;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            background: var(--panel-2);
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 5rem 0 3rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 60ch;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #082f49;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--border);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--panel-2);
+            color: var(--accent);
+        }
+
+        .hero-card {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 12px 28px var(--shadow);
+        }
+
+        .hero-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .hero-card li {
+            color: var(--muted);
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .hero-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 65ch;
+            margin-bottom: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 24px var(--shadow);
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .card a {
+            font-weight: bold;
+        }
+
+        .about-box {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 24px var(--shadow);
+        }
+
+        .about-box p + p {
+            margin-top: 1rem;
+        }
+
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid,
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-nav .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero {
+                padding-top: 3.5rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                padding: 0.45rem 0.65rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <script src="js/auth.js"></script>
-  <header class="site-header">
-    <div class="container">
-      <h1>Amanda Paccha Community</h1>
-      <p>
-        Portfolio of risk, governance, compliance, higher education, and investigations-focused work
-        across institutional, nonprofit, cultural, and operational environments.
-      </p>
-    </div>
-  </header>
+    <script src="js/auth.js"></script>
 
-  <main class="container">
-    <section class="intro">
-      <h2>Portfolio Overview</h2>
-      <p>
-        This site presents structured case studies and portfolio tracks showing work in operational risk,
-        governance, compliance, higher education administration, and investigations. Each portfolio is
-        organized to help recruiters quickly review methods, outcomes, and relevant functional experience.
-      </p>
-      <p>
-        Featured materials include risk matrices, governance frameworks, ERM and RCSA-style assessments,
-        compliance process reviews, reporting structures, and issue-management examples.
-      </p>
-    </section>
+    <nav class="portfolio-nav">
+        <div class="container">
+            <div class="brand">Amanda Paccha Community</div>
 
-    <section class="section-block">
-      <h2>Choose a Portfolio Focus</h2>
-      <div class="section-grid">
-        <a href="index.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Risk & Governance Portfolio</h3>
-            <p>
-              ERM, compliance, operational risk, governance controls, business continuity,
-              process review, and risk reporting.
-            </p>
-          </article>
-        </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="higher-ed/index.html">Higher Education</a>
+                <a href="investigations/index.html">Investigations</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-        <a href="higher-ed/index.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Higher Education Portfolio</h3>
-            <p>
-              Campus compliance, student affairs, institutional safety, academic operations,
-              policy support, and administrative workflows.
-            </p>
-          </article>
-        </a>
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Portfolio of Research, Analysis, and Community-Centered Work</h1>
+                <p>
+                    Welcome to the Amanda Paccha Community portfolio. This site highlights
+                    projects, investigations, and higher education work with a focus on
+                    thoughtful analysis, public value, and clear communication.
+                </p>
 
-        <a href="investigations/index.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Investigations & Ethics Portfolio</h3>
-            <p>
-              Misconduct investigations, ethics and compliance programs, case management,
-              investigative reporting, and governance enforcement.
-            </p>
-          </article>
-        </a>
-      </div>
-    </section>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" href="higher-ed/index.html">Explore Higher Education</a>
+                    <a class="btn btn-secondary" href="investigations/index.html">View Investigations</a>
+                </div>
+            </div>
 
-    <section class="section-block">
-      <h2>Risk & Governance Portfolio Sections</h2>
-      <div class="section-grid">
-        <a href="sections/museums.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Museums</h3>
-            <p>
-              Risk, continuity, governance, and stakeholder exposure in public-facing cultural environments.
-            </p>
-          </article>
-        </a>
+            <aside class="hero-card">
+                <h2>Featured Focus Areas</h2>
+                <ul>
+                    <li>Higher education and institutional analysis</li>
+                    <li>Investigative and research-based portfolio work</li>
+                    <li>Community-centered documentation and storytelling</li>
+                    <li>Structured digital portfolio development</li>
+                </ul>
+            </aside>
+        </div>
+    </header>
 
-        <a href="sections/nonprofit.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Nonprofit</h3>
-            <p>
-              Governance, documentation, program operations, and resilience practices for mission-driven organizations.
-            </p>
-          </article>
-        </a>
+    <main>
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Portfolio Sections</h2>
+                <p class="section-intro">
+                    Browse the main areas of the portfolio below. Each section is organized
+                    to make it easy for visitors, collaborators, and reviewers to understand
+                    the scope of the work.
+                </p>
 
-        <a href="sections/higher-education.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Higher Education</h3>
-            <p>
-              Academic operations, policy alignment, institutional controls, and department-level risk dependencies.
-            </p>
-          </article>
-        </a>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>Higher Education</h3>
+                        <p>
+                            Work related to higher education analysis, institutional topics,
+                            and academic or community-facing projects.
+                        </p>
+                        <a href="higher-ed/index.html">Open section →</a>
+                    </article>
 
-        <a href="sections/finance.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Finance</h3>
-            <p>
-              Financial risk, governance alignment, control monitoring, and workflow reliability.
-            </p>
-          </article>
-        </a>
+                    <article class="card">
+                        <h3>Investigations</h3>
+                        <p>
+                            Investigative projects, issue research, findings, and supporting
+                            documentation organized for clarity and review.
+                        </p>
+                        <a href="investigations/index.html">Open section →</a>
+                    </article>
 
-        <a href="sections/operations.html" class="section-card-link">
-          <article class="section-card">
-            <h3>Operations</h3>
-            <p>
-              Operational risk assessment, issue tracking, business continuity, and process improvement.
-            </p>
-          </article>
-        </a>
-      </div>
-    </section>
-  </main>
+                    <article class="card">
+                        <h3>Documentation</h3>
+                        <p>
+                            Repository notes, portfolio structure, and future project
+                            documentation can be added here or linked through the GitHub wiki.
+                        </p>
+                        <a href="https://github.com/amandapacchacommunity/amanda-erm-portfolio/wiki">Open wiki →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About This Site</h2>
+                <div class="about-box">
+                    <p>
+                        This site serves as a central portfolio hub for Amanda Paccha
+                        Community projects. It is designed to present work in a clear,
+                        professional format with direct access to major content areas.
+                    </p>
+                    <p>
+                        The structure supports both project presentation and ongoing
+                        documentation, making it easier to expand the portfolio over time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact / Next Steps</h2>
+                <p class="section-intro">
+                    You can expand this section with contact details, a professional bio,
+                    social links, or a downloadable resume.
+                </p>
+
+                <div class="about-box">
+                    <p>
+                        Suggested additions:
+                    </p>
+                    <p>
+                        • GitHub profile link<br />
+                        • LinkedIn profile<br />
+                        • Resume or CV<br />
+                        • Email or contact form
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Amanda Paccha Community. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
