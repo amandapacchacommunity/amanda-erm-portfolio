@@ -221,3 +221,6 @@ button:hover {
   color: var(--muted);
   font-size: 0.95rem;
 }
+.section-block {
+  margin-top: 28px;
+}
