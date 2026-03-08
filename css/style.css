@@ -1,12 +1,14 @@
 :root {
-  --bg: #f7f8fb;
-  --surface: #ffffff;
-  --text: #1f2937;
-  --muted: #5b6472;
-  --border: #d8dde6;
-  --accent: #1f4b99;
-  --accent-dark: #173974;
-  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --bg: #081225;
+  --surface: #0f1b33;
+  --surface-soft: #13213d;
+  --text: #f3f7ff;
+  --muted: #b7c3d9;
+  --border: #223454;
+  --accent: #38bdf8;
+  --accent-dark: #0ea5e9;
+  --accent-strong: #2563eb;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -20,7 +22,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at top, #0d1b36 0%, #081225 55%, #050b16 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -40,8 +42,9 @@ a {
 }
 
 .site-header {
-  background: #0f172a;
-  color: #fff;
+  background: rgba(6, 12, 24, 0.92);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-header .container {
@@ -56,18 +59,19 @@ a {
 
 .site-header p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .intro,
 .contact-card,
 .template-card,
 .section-block {
-  background: var(--surface);
+  background: rgba(15, 27, 51, 0.88);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 28px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
 }
 
 .intro {
@@ -80,6 +84,16 @@ a {
 .section-block h2,
 .template-card h2 {
   margin-top: 0;
+  color: #ffffff;
+}
+
+.intro p,
+.contact-card p,
+.section-block p,
+.template-card p,
+.section-block li,
+.template-card li {
+  color: var(--muted);
 }
 
 .section-block {
@@ -105,7 +119,7 @@ a {
 .matrix-card,
 .section-card,
 .template-card {
-  background: var(--surface);
+  background: rgba(19, 33, 61, 0.95);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 22px;
@@ -119,13 +133,20 @@ a {
 .template-card h3 {
   margin-top: 0;
   margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.matrix-card p,
+.section-card p,
+.template-card p {
+  color: var(--muted);
 }
 
 .matrix-card-link:hover .matrix-card,
 .section-card-link:hover .section-card {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-  border-color: #b9c5d8;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  border-color: #3b82f6;
 }
 
 ul {
@@ -153,25 +174,63 @@ input[type="password"] {
   border-radius: 12px;
   font-size: 1rem;
   margin: 12px 0;
+  background: #0c1730;
+  color: var(--text);
 }
 
-button {
+input[type="password"]::placeholder {
+  color: #8ea2c2;
+}
+
+button,
+.btn {
   appearance: none;
   border: 0;
   border-radius: 12px;
-  background: var(--accent);
-  color: white;
   padding: 12px 18px;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+button {
+  background: var(--accent-strong);
+  color: #ffffff;
 }
 
 button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #081225;
+}
+
+.btn-primary:hover {
   background: var(--accent-dark);
+  color: #081225;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #e8f1ff;
+  border: 1px solid #35507d;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: #4f6fa8;
+  transform: translateY(-1px);
 }
 
 .error-text {
-  color: #b42318;
+  color: #fca5a5;
   min-height: 1.2em;
 }
 
@@ -202,6 +261,7 @@ button:hover {
   border-collapse: collapse;
   margin-top: 16px;
   font-size: 0.95rem;
+  color: var(--text);
 }
 
 .matrix-table th,
@@ -213,14 +273,16 @@ button:hover {
 }
 
 .matrix-table th {
-  background: #eef3fb;
+  background: #12213e;
+  color: #ffffff;
+}
+
+.matrix-table td {
+  background: rgba(15, 27, 51, 0.82);
 }
 
 .footer-note {
   margin-top: 28px;
   color: var(--muted);
   font-size: 0.95rem;
-}
-.section-block {
-  margin-top: 28px;
 }
