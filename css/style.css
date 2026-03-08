@@ -286,3 +286,42 @@ button:hover {
   color: var(--muted);
   font-size: 0.95rem;
 }
+.btn,
+.btn:visited {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+a.btn.btn-primary,
+a.btn.btn-primary:visited,
+button.btn-primary {
+  background-color: #38bdf8 !important;
+  color: #081225 !important;
+  border: 1px solid #38bdf8 !important;
+}
+
+a.btn.btn-primary:hover,
+button.btn-primary:hover {
+  background-color: #0ea5e9 !important;
+  color: #081225 !important;
+  border-color: #0ea5e9 !important;
+}
+
+a.btn.btn-secondary,
+a.btn.btn-secondary:visited,
+button.btn-secondary {
+  background-color: transparent !important;
+  color: #e8f1ff !important;
+  border: 1px solid #35507d !important;
+}
+
+a.btn.btn-secondary:hover,
+button.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #e8f1ff !important;
+  border-color: #4f6fa8 !important;
+}
